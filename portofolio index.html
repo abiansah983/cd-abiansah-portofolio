@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Achmad Zunaidi Abiansah</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            color: #17243a;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #0b1f3a;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d9ad55;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d9ad55;
+        }
+
+        /* HOME */
+        .home {
+            min-height: 90vh;
+            background: linear-gradient(120deg, #081a31, #1c4a75);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 60px 8%;
+            gap: 40px;
+        }
+
+        .home-text {
+            max-width: 600px;
+        }
+
+        .home-text h3 {
+            color: #d9ad55;
+            letter-spacing: 2px;
+        }
+
+        .home-text h1 {
+            font-size: 45px;
+            margin: 20px 0;
+        }
+
+        .home-text h1 span {
+            color: #d9ad55;
+        }
+
+        .home-text p {
+            line-height: 1.8;
+            color: #d5dfeb;
+        }
+
+        .home-text button {
+            background: #d9ad55;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            margin-top: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .home-text button:hover {
+            background: white;
+        }
+
+        .profile {
+            width: 300px;
+            height: 390px;
+            object-fit: cover;
+            object-position: top;
+            border: 5px solid #d9ad55;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px #0005;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul h2 {
+            font-size: 32px;
+            color: #0b1f3a;
+        }
+
+        .judul p {
+            color: #68758a;
+            margin-top: 10px;
+        }
+
+        /* ABOUT ME */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #0001;
+        }
+
+        .about-box h3 {
+            margin-bottom: 15px;
+            color: #153b66;
+        }
+
+        .about-box p {
+            line-height: 1.8;
+            color: #58677c;
+        }
+
+        .data {
+            margin: 12px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .data b {
+            display: inline-block;
+            width: 110px;
+        }
+
+        /* WHAT I CAN DO */
+        #skills {
+            background: #eaf0f7;
+        }
+
+        .skill-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px #0002;
+        }
+
+        .skill-box h3 {
+            color: #153b66;
+            margin-bottom: 15px;
+        }
+
+        .skill-box p {
+            color: #68758a;
+            line-height: 1.7;
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        /* ACHIEVEMENT */
+        .achievement-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .achievement-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #0001;
+        }
+
+        .achievement-box h3 {
+            color: #153b66;
+            margin-bottom: 10px;
+        }
+
+        .achievement-box p {
+            color: #68758a;
+            line-height: 1.7;
+        }
+
+        /* CONTACT */
+        #contact {
+            background: #0b1f3a;
+            color: white;
+        }
+
+        #contact .judul h2 {
+            color: white;
+        }
+
+        #contact .judul p {
+            color: #d5dfeb;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-box {
+            background: white;
+            color: #17243a;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .contact-box h3 {
+            color: #153b66;
+            margin-bottom: 10px;
+        }
+
+        .contact-box a {
+            color: #153b66;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-box a:hover {
+            color: #c18c31;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #07172a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer span {
+            color: #d9ad55;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 13px;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .home-text h1 {
+                font-size: 32px;
+            }
+
+            .profile {
+                width: 230px;
+                height: 300px;
+            }
+
+            .about-container,
+            .skill-container,
+            .achievement-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">ABI<span>.</span>PORTFOLIO</div>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#skills">What I Can Do</a>
+            <a href="#achievement">Achievement</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <div class="home">
+
+        <div class="home-text">
+            <h3>MAHASISWA TEKNIK INFORMATIKA</h3>
+
+            <h1>
+                Achmad Zunaidi
+                <span>Abiansah</span>
+            </h1>
+
+            <p>
+                Halo! Saya Abi, mahasiswa Teknik Informatika
+                Universitas Negeri Surabaya. Saya memiliki
+                ketertarikan dalam dunia teknologi, multimedia,
+                desain grafis, dan pengembangan kreativitas.
+            </p>
+
+            <a href="#about">
+                <button>Kenali Saya</button>
+            </a>
+        </div>
+
+        <div>
+            <img src="foto-profil.jpg"
+                 alt="Foto Profil Abi"
+                 class="profile">
+        </div>
+
+    </div>
+
+    <!-- ABOUT ME -->
+    <section id="about">
+
+        <div class="judul">
+            <h2>About Me</h2>
+            <p>Mengenal lebih dekat tentang diri saya</p>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-box">
+                <h3>Tentang Saya</h3>
+
+                <p>
+                    Perkenalkan, nama saya Achmad Zunaidi
+                    Abiansah, biasa dipanggil Abi. Saya lahir
+                    di Mojokerto pada 22 Juni 2008.
+
+                    Saya merupakan lulusan MAN Kota Mojokerto
+                    jurusan IPA dan saat ini menjadi mahasiswa
+                    Universitas Negeri Surabaya program studi
+                    Teknik Informatika.
+
+                    Saya senang mempelajari hal baru,
+                    mengembangkan kemampuan teknologi,
+                    dan melakukan aktivitas olahraga.
+                </p>
+            </div>
+
+            <div class="about-box">
+                <h3>Data Diri</h3>
+
+                <div class="data">
+                    <b>Nama</b>: Achmad Zunaidi Abiansah
+                </div>
+
+                <div class="data">
+                    <b>Panggilan</b>: Abi
+                </div>
+
+                <div class="data">
+                    <b>NIM</b>: 26051204245
+                </div>
+
+                <div class="data">
+                    <b>Prodi</b>: Teknik Informatika
+                </div>
+
+                <div class="data">
+                    <b>Universitas</b>: UNESA
+                </div>
+
+                <div class="data">
+                    <b>Pendidikan</b>: MAN Kota Mojokerto
+                </div>
+
+                <div class="data">
+                    <b>Aktivitas</b>: Belajar dan Olahraga
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHAT I CAN DO -->
+    <section id="skills">
+
+        <div class="judul">
+            <h2>What I Can Do</h2>
+            <p>Kemampuan dan keterampilan yang saya miliki</p>
+        </div>
+
+        <div class="skill-container">
+
+            <div class="skill-box">
+                <div class="icon">🎨</div>
+                <h3>Desain Grafis</h3>
+                <p>
+                    Memiliki pengalaman membuat logo
+                    dan mengembangkan desain visual
+                    yang menarik dan kreatif.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">🎬</div>
+                <h3>Video Editing</h3>
+                <p>
+                    Memiliki pengalaman mengedit video,
+                    menyusun konsep visual, dan membuat film.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">📷</div>
+                <h3>Photo Editing</h3>
+                <p>
+                    Mampu melakukan pengeditan foto
+                    untuk menghasilkan tampilan visual
+                    yang lebih menarik.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">💻</div>
+                <h3>Pemrograman</h3>
+                <p>
+                    Sedang mengembangkan kemampuan
+                    pemrograman dan mempelajari teknologi
+                    informatika.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">⚽</div>
+                <h3>Olahraga</h3>
+                <p>
+                    Memiliki minat dalam bidang olahraga,
+                    khususnya futsal, untuk menjaga
+                    kesehatan dan kerja sama tim.
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <div class="icon">🏍️</div>
+                <h3>Otomotif</h3>
+                <p>
+                    Memiliki ketertarikan terhadap
+                    dunia otomotif dan perkembangan
+                    teknologi kendaraan.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENT -->
+    <section id="achievement">
+
+        <div class="judul">
+            <h2>Achievement</h2>
+            <p>Pendidikan, pengalaman, dan pengembangan diri</p>
+        </div>
+
+        <div class="achievement-container">
+
+            <div class="achievement-box">
+                <h3>🎓 Pendidikan di UNESA</h3>
+
+                <p>
+                    Memulai perjalanan sebagai mahasiswa
+                    Universitas Negeri Surabaya pada
+                    program studi Teknik Informatika.
+                </p>
+
+                <br>
+                <small>2026 - Universitas Negeri Surabaya</small>
+            </div>
+
+            <div class="achievement-box">
+                <h3>🎨 Pengalaman Multimedia</h3>
+
+                <p>
+                    Mengembangkan pengalaman dan kreativitas
+                    dalam bidang multimedia, seperti membuat
+                    logo, mengedit foto dan video,
+                    serta membuat film.
+                </p>
+
+                <br>
+                <small>Pengalaman dan Pengembangan Diri</small>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="judul">
+            <h2>Contact</h2>
+            <p>Mari terhubung dan berkomunikasi dengan saya</p>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-box">
+                <h3>📧 Email</h3>
+
+                <p>
+                    <a href="mailto:abiansah743@gmail.com">
+                        abiansah743@gmail.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="contact-box">
+                <h3>💼 LinkedIn</h3>
+
+                <p>
+                    <a href="https://www.linkedin.com/in/achmad-zunaidi-abiansah-052380441"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Profil LinkedIn Saya
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 <span>Achmad Zunaidi Abiansah</span>.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
